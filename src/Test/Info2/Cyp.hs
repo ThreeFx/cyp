@@ -5,6 +5,8 @@ module Test.Info2.Cyp (
 , proofFile
 ) where
 
+import Prelude hiding ((<>))
+
 import Control.Monad
 import Control.Monad.State
 import Data.Foldable (for_)
