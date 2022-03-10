@@ -1,3 +1,5 @@
+{-# LANGUAGE FlexibleInstances #-}
+
 module Test.Info2.Cyp.Util
     ( Err
     , debug
@@ -11,10 +13,15 @@ module Test.Info2.Cyp.Util
     )
 where
 
+import Prelude hiding ((<>))
+
 import Language.Haskell.Exts.Simple (SrcLoc (..), ParseResult (..))
 import Text.PrettyPrint (Doc, (<>), (<+>), ($+$), colon, empty, int, nest, text)
 
 type Err = Either Doc
+
+instance MonadFail (Either Doc) where
+  fail = errStr
 
 err :: Doc -> Err a
 err = Left
