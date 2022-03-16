@@ -18,6 +18,9 @@ The use of this tool to verify Haskell functions is justified by the following c
 Getting started
 ---------------
 
+
+### Cabal-based builds
+
 Extract the program to some directory and run
 
     cabal configure
@@ -31,6 +34,14 @@ where `<background.cthy>` defines the program and available lemmas and `<proof.c
 
 The source code for cyp also contains some example theories and proofs (look for the files in `test-data/pos`).
 
+
+### Stack-based builds
+
+Alternatively, if you have the [`stack` tool](https://haskellstack.org) installed
+
+    stack build
+
+Run `cyp` using the command `stack run`, or install the binary using `stack install`. The format is identical to the `cyp` command in the above section.
 
 Syntax of Proofs
 ----------------
